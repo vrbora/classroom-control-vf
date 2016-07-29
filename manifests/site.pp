@@ -43,5 +43,7 @@ node default {
   # Example:
   #   class { 'my_class': }
   notify { "Hello, my name is ${::fqdn}": }
+  $message = hiera('message', 'No Message found')
+  notify { $message: }
   
 }
